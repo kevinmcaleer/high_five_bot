@@ -3,7 +3,7 @@
 from stepper_28byj48 import BYJ28
 from time import sleep
 
-stepper  = BYJ28([10,11,12,13])
+stepper  = BYJ28([0,1,2,3])
 steps = 130
 direction = False
 delay = 0.001
@@ -23,7 +23,7 @@ def calibrate_position():
         command = input(">")
         if command in ['a','d','q','z','c']:
             if command == 'a':
-                stepper.move_motor(1,direction)
+                stepper.move_motor(10,direction)
             if command == 'w':
                 direction = not direction
             if command == 'z':
@@ -48,9 +48,9 @@ def default_position():
 # Un-comment the lines below to use the calibrate position, calibrate 90 degree
 # or to move the hand to the default position
 
-# calibrate_position()
+calibrate_position()
 # calibrate_90()
-default_position()
+# default_position()
 
     
     
